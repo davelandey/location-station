@@ -1,4 +1,6 @@
 const Weather  = (props) => {
+    let coordinates = props.coordinates
+    console.log(coordinates);
     
     return (
 
