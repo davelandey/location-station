@@ -75,16 +75,16 @@ let roundedKToC = KToC.toFixed(1);
         Metric ({'\u00b0'}C)
       </th>
       <td>
-      {KToC(weatherData.main.feels_like)}
+      {KToC(weatherData?.main?.feels_like)}
       </td>
       <td>
-      {KToC(weatherData.main.temp)}
+      {KToC(weatherData?.main?.temp)}
       </td>
       <td>
-      {KToC(weatherData.main.temp_min)}
+      {KToC(weatherData?.main?.temp_min)}
       </td>
       <td>
-      {KToC(weatherData.main.temp_max)}
+      {KToC(weatherData?.main?.temp_max)}
       </td>
     </tr>
     <tr>
@@ -92,26 +92,26 @@ let roundedKToC = KToC.toFixed(1);
         Imperial ({'\u00b0'}F)
       </th>
       <td>
-      {KToF(weatherData.main.feels_like)}
+      {KToF(weatherData?.main?.feels_like)}
       </td>
       <td>
-      {KToF(weatherData.main.temp)}
+      {KToF(weatherData?.main?.temp)}
       </td>
       <td>
-      {KToF(weatherData.main.temp_min)}
+      {KToF(weatherData?.main?.temp_min)}
       </td>
       <td>
-      {KToF(weatherData.main.temp_max)}
+      {KToF(weatherData?.main?.temp_max)}
       </td>
     </tr>
   </tbody>
 </Table>
 <h3>Cloud conditions</h3>
-<p>{weatherData.weather[0].description}</p>
+<p>{weatherData !="" ? weatherData.weather[0].description : null}</p>
 <h3>Wind:</h3> 
-<p>{weatherData.wind.speed}mph</p>
+<p>{weatherData?.wind?.speed}mph</p>
     </> 
     );
 }
- 
+
 export default Weather;
