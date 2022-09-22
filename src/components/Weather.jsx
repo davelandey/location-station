@@ -4,10 +4,10 @@ import {Table } from 'reactstrap'
 const Weather  = (props) => {
     let coordinates = props.coordinates
     console.log(coordinates);
-    // APIkey = {9aa8802ae46e3d51ec1865382cfb3405};
+
     let lat = props.coordinates.lat;
     let lon = props.coordinates.lon;
-    // const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`;
+
     const [weatherData, setWeatherData] = useState("");
     
     async function weatherDataFetch(){
@@ -40,7 +40,7 @@ let roundedKToC = KToC.toFixed(1);
 
     
     useEffect(() => {
-        if(lat !== undefined && lon !== undefined)
+        if(lat != undefined && lon != undefined)
         weatherDataFetch();
     }, [props.coordinates.lat, props.coordinates.lon]);
 
@@ -49,7 +49,7 @@ let roundedKToC = KToC.toFixed(1);
         <>
     <h1>Current weather in: {weatherData.name}</h1>
     <h3>Temperature</h3>
-    <Table bordered>
+    <Table borderless>
   <thead>
     <tr>
         <th>
